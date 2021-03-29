@@ -1,4 +1,4 @@
-async function populateRestaurants() 
+/* async function populateRestaurants() 
 {
 
 }
@@ -9,7 +9,23 @@ async function getDining()
     const diningData = await request.json();
     return diningData;
 }
-
+*/
+async function getDining()
+{
+    const request = await fetch("/api/dining");
+    const diningData = await request.json();
+    const dining = diningData.data; 
+    const x = document.querySelector(".storedDiningData");
+    dining.forEach(element => {
+        const rows = document.createElement("tr");
+        rows.innerHTML = `
+        <td>${element.hall_id}</td>
+        <td>${element.hall_name}</td>
+        <td>${element.hall_address}</td>`;
+        x.append(rows)
+    });
+}
+/*
 async function setBasicData() {
     localStorage.setItem('item', 'item_2');
 }
@@ -38,5 +54,5 @@ console.log(storedDiningData);
 
 
 }
-
-window.onload = windowActions;
+*/
+window.onload = getDining; 
