@@ -32,13 +32,13 @@ async function windowActions() {
     rows.innerHTML = `
         <td>${element.meal_id}</td>
         <td>${element.meal_name}</td>
-        <td>${element.meal_category}</td>
         <td>${element.calories}</td>
         <td>${element.carbs}</td>
         <td>${element.sodium}</td>
         <td>${element.protein}</td>
         <td>${element.fat}</td>
-        <td>${element.cholesterol}</td>`;
+        <td>${element.cholesterol}</td>
+        <td>${element.serving_size}`;
     result.append(rows);
 
 
@@ -115,6 +115,44 @@ async function windowActions() {
         { label: selectedMeals[7].meal_name, y: selectedMeals[7].protein },
         { label: selectedMeals[8].meal_name, y: selectedMeals[8].protein },
         { label: selectedMeals[9].meal_name, y: selectedMeals[9].protein }
+      ]
+    },
+    {
+      type: "stackedBar",
+      name: "Calories",
+      showInLegend: "true",
+      xValueFormatString: "",
+      yValueFormatString: "",
+      dataPoints: [
+        { label: selectedMeals[0].meal_name, y: selectedMeals[0].calories },
+        { label: selectedMeals[1].meal_name, y: selectedMeals[1].calories },
+        { label: selectedMeals[2].meal_name, y: selectedMeals[2].calories },
+        { label: selectedMeals[3].meal_name, y: selectedMeals[3].calories},
+        { label: selectedMeals[4].meal_name, y: selectedMeals[4].calories },
+        { label: selectedMeals[5].meal_name, y: selectedMeals[5].calories },
+        { label: selectedMeals[6].meal_name, y: selectedMeals[6].calories },
+        { label: selectedMeals[7].meal_name, y: selectedMeals[7].calories },
+        { label: selectedMeals[8].meal_name, y: selectedMeals[8].calories },
+        { label: selectedMeals[9].meal_name, y: selectedMeals[9].calories }
+      ]
+    },
+    {
+      type: "stackedBar",
+      name: "Serving Size",
+      showInLegend: "true",
+      xValueFormatString: "",
+      yValueFormatString: "",
+      dataPoints: [
+        { label: selectedMeals[0].meal_name, y: selectedMeals[0].serving_size },
+        { label: selectedMeals[1].meal_name, y: selectedMeals[1].serving_size },
+        { label: selectedMeals[2].meal_name, y: selectedMeals[2].serving_size },
+        { label: selectedMeals[3].meal_name, y: selectedMeals[3].serving_size },
+        { label: selectedMeals[4].meal_name, y: selectedMeals[4].serving_size },
+        { label: selectedMeals[5].meal_name, y: selectedMeals[5].serving_size },
+        { label: selectedMeals[6].meal_name, y: selectedMeals[6].serving_size },
+        { label: selectedMeals[7].meal_name, y: selectedMeals[7].serving_size },
+        { label: selectedMeals[8].meal_name, y: selectedMeals[8].serving_size },
+        { label: selectedMeals[9].meal_name, y: selectedMeals[9].serving_size }
       ]
     },
     {
