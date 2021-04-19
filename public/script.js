@@ -41,7 +41,6 @@ async function windowActions() {
         <td>${element.cholesterol}</td>`;
     result.append(rows);
 
-  });
 
   const chart = new CanvasJS.Chart("chartContainer", {
     animationEnabled: true,
@@ -156,19 +155,20 @@ async function windowActions() {
         { label: selectedMeals[9].meal_name, y: selectedMeals[9].carbs }
       ]
     }]
-
-  chart.render();
+  });
+    chart.render();
     
-  function toggleDataSeries(e) {
-    if(typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-      e.dataSeries.visible = false;
+    function toggleDataSeries(e) {
+      if(typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+        e.dataSeries.visible = false;
     }
     else {
-      e.dataSeries.visible = true;
+        e.dataSeries.visible = true;
     }
     chart.render();
   }
     
+});
+  return selectedMeals;
 }
-
 window.onload = windowActions 
